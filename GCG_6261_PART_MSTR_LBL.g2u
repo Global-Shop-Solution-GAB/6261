@@ -1,0 +1,596 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.Form1..create(BaseForm)
+Gui.Form1..caption("LOT Selection")
+Gui.Form1..size(3930,4260)
+Gui.Form1..minx(0)
+Gui.Form1..miny(0)
+Gui.Form1..position(0,0)
+Gui.Form1..forecolor(0)
+Gui.Form1..BackColor(-2147483633)
+Gui.Form1..mousepointer(0)
+Gui.Form1..Event(UnLoad,cmdcancel_click)
+Gui.Form1..AlwaysOnTop(False)
+Gui.Form1..FontName("Tahoma")
+Gui.Form1..FontSize(8.25)
+Gui.Form1..ControlBox(True)
+Gui.Form1..MaxButton(True)
+Gui.Form1..MinButton(True)
+Gui.Form1..Moveable(True)
+Gui.Form1..Sizeable(True)
+Gui.Form1..ShowInTaskBar(True)
+Gui.Form1..TitleBar(True)
+Gui.Form1.txtStartPart.create(textbox,"",True,1215,360,0,105,1920,True,0,"Arial",8,-2147483643,1)
+Gui.Form1.txtStartPart.defaultvalue("")
+Gui.Form1.txtStartPart.Event(LostFocus,txtStartPart_LostFocus)
+Gui.Form1.txtEndPart.create(textbox,"",True,1215,360,0,1965,1905,True,0,"Arial",8,-2147483643,1)
+Gui.Form1.txtEndPart.defaultvalue("")
+Gui.Form1.txtEndPart.Event(LostFocus,txtEndPart_LostFocus)
+Gui.Form1.lblStartPart.create(label,"Starting PART",True,1155,255,0,200,1615,True,0,"Arial",8,-2147483633,0,0)
+Gui.Form1.lblStartPart.defaultvalue("")
+Gui.Form1.lblStartPart.BorderStyle(0)
+Gui.Form1.luStartPart.create(button)
+Gui.Form1.luStartPart.caption("^")
+Gui.Form1.luStartPart.size(375,375)
+Gui.Form1.luStartPart.position(1315,1890)
+Gui.Form1.luStartPart.event(Click,lustartpart_click)
+Gui.Form1.luStartPart.defaultvalue("")
+Gui.Form1.luStartPart.Enabled(True)
+Gui.Form1.luStartPart.Visible(True)
+Gui.Form1.luStartPart.Zorder(0)
+Gui.Form1.luStartPart.FontName("Tahoma")
+Gui.Form1.luStartPart.FontSize(8)
+Gui.Form1.lblEndPart.create(label,"Ending PART",True,930,195,0,2015,1615,True,0,"Arial",8,-2147483633,0,0)
+Gui.Form1.lblEndPart.defaultvalue("")
+Gui.Form1.lblEndPart.BorderStyle(0)
+Gui.Form1.luEndPart.create(button)
+Gui.Form1.luEndPart.caption("^")
+Gui.Form1.luEndPart.size(390,375)
+Gui.Form1.luEndPart.position(3200,1875)
+Gui.Form1.luEndPart.event(Click,luendpart_click)
+Gui.Form1.luEndPart.defaultvalue("")
+Gui.Form1.luEndPart.Enabled(True)
+Gui.Form1.luEndPart.Visible(True)
+Gui.Form1.luEndPart.Zorder(0)
+Gui.Form1.luEndPart.FontName("Tahoma")
+Gui.Form1.luEndPart.FontSize(8)
+Gui.Form1.cmdPrint.create(button)
+Gui.Form1.cmdPrint.caption("Print")
+Gui.Form1.cmdPrint.size(855,435)
+Gui.Form1.cmdPrint.position(465,2700)
+Gui.Form1.cmdPrint.event(Click,cmdprint_click)
+Gui.Form1.cmdPrint.defaultvalue("")
+Gui.Form1.cmdPrint.Enabled(True)
+Gui.Form1.cmdPrint.Visible(True)
+Gui.Form1.cmdPrint.Zorder(0)
+Gui.Form1.cmdPrint.FontName("Tahoma")
+Gui.Form1.cmdPrint.FontSize(8)
+Gui.Form1.cmdCancel.create(button)
+Gui.Form1.cmdCancel.caption("Cancel")
+Gui.Form1.cmdCancel.size(855,435)
+Gui.Form1.cmdCancel.position(2085,2685)
+Gui.Form1.cmdCancel.event(Click,cmdcancel_click)
+Gui.Form1.cmdCancel.defaultvalue("")
+Gui.Form1.cmdCancel.Enabled(True)
+Gui.Form1.cmdCancel.Visible(True)
+Gui.Form1.cmdCancel.Zorder(0)
+Gui.Form1.cmdCancel.FontName("Tahoma")
+Gui.Form1.cmdCancel.FontSize(8)
+Gui.Form1.lbl3.create(label,"Print Part Master Labels",True,2760,255,0,400,200,True,0,"Arial",12,-2147483633,0,0)
+Gui.Form1.lbl3.fontstyle(True,False,False,False,False)
+Gui.Form1.lbl3.defaultvalue("")
+Gui.Form1.lbl3.BorderStyle(0)
+Gui.Form1.txtLoc.create(textbox,"",True,840,300,0,1200,1100,True,0,"Arial",8,-2147483643,1)
+Gui.Form1.txtLoc.defaultvalue("")
+Gui.Form1.luLoc.create(button)
+Gui.Form1.luLoc.caption("^")
+Gui.Form1.luLoc.size(345,375)
+Gui.Form1.luLoc.position(2090,1070)
+Gui.Form1.luLoc.event(Click,luloc_click)
+Gui.Form1.luLoc.defaultvalue("")
+Gui.Form1.luLoc.Enabled(True)
+Gui.Form1.luLoc.Visible(True)
+Gui.Form1.luLoc.Zorder(0)
+Gui.Form1.luLoc.FontName("Tahoma")
+Gui.Form1.luLoc.FontSize(8)
+Gui.Form1.lblLoc.create(label,"Location",True,750,255,0,1400,800,True,0,"Arial",8,-2147483633,0,0)
+Gui.Form1.lblLoc.defaultvalue("")
+Gui.Form1.lblLoc.BorderStyle(0)
+Gui.frmPrintSelect..Create(BaseForm)
+Gui.frmPrintSelect..Caption("Select a printer")
+Gui.frmPrintSelect..Size(4875,1935)
+Gui.frmPrintSelect..MinX(0)
+Gui.frmPrintSelect..MinY(0)
+Gui.frmPrintSelect..Position(0,0)
+Gui.frmPrintSelect..AlwaysOnTop(True)
+Gui.frmPrintSelect..FontName("Tahoma")
+Gui.frmPrintSelect..FontSize(8.25)
+Gui.frmPrintSelect..ControlBox(True)
+Gui.frmPrintSelect..MaxButton(False)
+Gui.frmPrintSelect..MinButton(True)
+Gui.frmPrintSelect..MousePointer(0)
+Gui.frmPrintSelect..Moveable(True)
+Gui.frmPrintSelect..Sizeable(False)
+Gui.frmPrintSelect..ShowInTaskBar(True)
+Gui.frmPrintSelect..TitleBar(True)
+Gui.frmPrintSelect..Event(UnLoad,frmPrintSelect_UnLoad)
+Gui.frmPrintSelect.ddlPrinters.Create(DropDownList)
+Gui.frmPrintSelect.ddlPrinters.Enabled(True)
+Gui.frmPrintSelect.ddlPrinters.Visible(True)
+Gui.frmPrintSelect.ddlPrinters.Zorder(0)
+Gui.frmPrintSelect.ddlPrinters.Size(4650,300)
+Gui.frmPrintSelect.ddlPrinters.Position(90,105)
+Gui.frmPrintSelect.ddlPrinters.FontName("Tahoma")
+Gui.frmPrintSelect.ddlPrinters.FontSize(8.25)
+Gui.frmPrintSelect.cmdConfirm.Create(Button)
+Gui.frmPrintSelect.cmdConfirm.Enabled(True)
+Gui.frmPrintSelect.cmdConfirm.Visible(True)
+Gui.frmPrintSelect.cmdConfirm.Zorder(0)
+Gui.frmPrintSelect.cmdConfirm.Size(1125,345)
+Gui.frmPrintSelect.cmdConfirm.Position(795,1005)
+Gui.frmPrintSelect.cmdConfirm.Caption("Print")
+Gui.frmPrintSelect.cmdConfirm.FontName("Tahoma")
+Gui.frmPrintSelect.cmdConfirm.FontSize(8.25)
+Gui.frmPrintSelect.cmdConfirm.Event(Click,cmdConfirm_Click)
+Gui.frmPrintSelect.cmdCancel.Create(Button)
+Gui.frmPrintSelect.cmdCancel.Enabled(True)
+Gui.frmPrintSelect.cmdCancel.Visible(True)
+Gui.frmPrintSelect.cmdCancel.Zorder(0)
+Gui.frmPrintSelect.cmdCancel.Size(1125,345)
+Gui.frmPrintSelect.cmdCancel.Position(2640,1005)
+Gui.frmPrintSelect.cmdCancel.Caption("Cancel")
+Gui.frmPrintSelect.cmdCancel.FontName("Tahoma")
+Gui.frmPrintSelect.cmdCancel.FontSize(8.25)
+Gui.frmPrintSelect.cmdCancel.Event(Click,frmPrintSelect_UnLoad)
+Gui.frmPrintSelect.txtCopies.Create(TextBox,"1",True,690,300,0,2460,540,True,0,"Tahoma",8.25,,1)
+Gui.frmPrintSelect.txtCopies.NumericOnly(2)
+Gui.frmPrintSelect.lbl1.Create(Label,"Copies of Labels:",True,1230,195,0,1050,600,True,0,"Tahoma",8.25,,0,0)
+Gui.frmPrintSelect.lbl1.BorderStyle(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.BIRunID.Declare(Long,0)
+Variable.Global.BILogID.Declare(Long,0)
+Variable.UDT.uITEMS.Define("PART",String,PART)
+Variable.UDT.uITEMS.Define("DESCR",String,DESCRIPTION)
+Variable.UDT.uITEMS.Define("LOCN",String,LOCATION)
+Variable.UDT.uITEMS.Define("DESC2",String,DESCRIPTION_2)
+Variable.UDT.uITEMS.Define("DESC3",String,DESCRIPTION_3)
+Variable.UDT.uITEMS.Define("PACKINFO",String,USER1)
+'6261
+Variable.UDT.uITEMS.Define("PRODUCT_LINE",String,PRODUCT_LINE)
+Variable.UDT.uITEMS.Define("XREF",String,CUSTOMER_PART)
+Variable.UDT.uITEMS.Define("TYPECHK",String,TYPECHK)
+Variable.uGlobal.uITEMS.Declare("uITEMS")
+Variable.Global.sStartLot.Declare(String)
+Variable.Global.sEndLot.Declare(String)
+Variable.Global.sStartPart.Declare(String)
+Variable.Global.sEndPart.Declare(String)
+Variable.Global.sLoc.Declare(String)
+
+'Added by Luke for passing the elements
+V.Global.sFinalElements.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+
+'TJS - Jan 2021 - 6261
+'Customer: Five Star Race Car Bodies
+'Modified GAB_PART_MSTR_LABEL.gas and IV_Part_Master.lab to switch data when the product line is "E1" or "M1" and the customer cross reference is not blank.
+
+'Hook 15710 - Populate
+	'V.Passed.000016 - Script 1
+	'V.Passed.000020 - Script 2
+	'V.Passed.000021 - Script 3
+'Hook 15760 - Script 1
+'Hook 15770 - Script 2
+'Hook 15780 - Script 3
+
+'Luke Perrine - 12/6/2022
+'Updated to add part verification in text fields and a stop to check if it's trying to print more than 50 at a time to verify.
+'Added new printer selection screen since default one was not ordered alphabetically and wasn't storing the last used printer.
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+F.Intrinsic.Control.SelectCase(V.Caller.Hook)
+	F.Intrinsic.Control.Case("15710")
+		V.Passed.000016.Set("Part Lbl")
+	F.Intrinsic.Control.CaseElse
+		F.Intrinsic.Control.CallSub(LoadDDL)
+		Gui.Form1..Show
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_BIN_MASTER_LABEL.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Main.End
+
+Program.Sub.LoadDDL.Start
+F.Intrinsic.Control.SetErrorHandler("cmdprint_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare
+V.Local.lCount.Declare
+V.Local.sRow.Declare
+V.Local.sItem.Declare
+V.Local.sLastSelected.Declare
+
+'Luke Perrine - This sub is for filling out the printer selection and ordering the printers alphabetically.
+
+F.ODBC.Connection!comcon.OpenCommonConnection
+F.ODBC.Connection!comcon.ExecuteAndReturn("SELECT SENTINELALIAS, PRINTERNAME FROM SERVER_PRINTERS WHERE SENTINELENABLED = 1 ORDER BY SENTINELALIAS ASC",V.Local.sRet)
+F.ODBC.Connection!comcon.Close
+
+F.Intrinsic.String.Split(V.Local.sRet,"#$#",V.Local.sRet)
+
+F.Intrinsic.Control.For(V.Local.lCount,0,V.Local.sRet.UBound,1)
+	F.Intrinsic.String.Split(V.Local.sRet(V.Local.lCount),"*!*",V.Local.sRow)
+	F.Intrinsic.String.Build("{0} - {1}",V.Local.sRow(0),V.Local.sRow(1),V.Local.sItem)
+	gui.frmPrintSelect.ddlPrinters.AddItem(V.Local.sItem)
+F.Intrinsic.Control.Next(V.Local.lCount)
+
+'Luke Perrine - Reads the last used printer by the current user.
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GCG_6261_PART_MSTR",6261,V.Caller.Terminal,5,"",V.Local.sLastSelected)
+gui.frmPrintSelect.ddlPrinters.Text(V.Local.sLastSelected)
+
+F.Intrinsic.Control.Label("cmdprint_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_BIN_MASTER_LABEL.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.LoadDDL.End
+
+Program.Sub.cmdprint_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdprint_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sElementList.Declare(String)
+V.Local.iBIRptID.Declare(Long)
+V.Local.iFor.Declare
+V.Local.sMsg.Declare
+V.Local.sRet.Declare
+
+'Get run ID
+F.Global.BI.GetRunID(V.Global.BIRunID)
+
+'6261
+F.Global.BI.GetIDFromName("GCG_6261_PART_MSTR.lab",V.Local.iBIRptID)
+'Starting BI Logging
+F.Global.BI.StartLogging(V.Global.BIRunID,V.Local.iBIRptID,-1,"",V.Global.BILogID)
+
+V.Global.sStartPart.Set(V.Screen.Form1!txtStartPart.Text)
+V.Global.sEndPart.Set(V.Screen.Form1!txtEndPart.Text)
+
+'6261 - define printed element list
+V.Local.sElementList.Set("PART*!*LOCN*!*DESCR*!*DESC2*!*DESC3*!*PACKINFO*!*PRODUCT_LINE*!*XREF*!*TYPECHK")
+
+'6261
+F.Intrinsic.String.Build("Select IM.PART, IM.LOCATION, IM.DESCRIPTION,IM.PRODUCT_LINE, I2.DESCRIPTION_2, I2.DESCRIPTION_3, ' ' AS USER1, IX.CUSTOMER_PART,' ' as TYPECHK from INVENTORY_MSTR IM left join INVENTORY_MST2 I2 on IM.PART = I2.PART and IM.LOCATION = I2.LOCATION left join INV_CROSS_REF IX on IM.PART = IX.PART and IM.LOCATION = IX.LOCATION where IM.PART between '{0}' and '{1}' and IM.LOCATION = '{2}' order by IM.PART",V.Global.sStartPart,V.Global.sEndPart,V.Global.sLoc,V.Local.sSql)
+'F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+F.ODBC.Connection!conx.OpenCompanyConnection
+
+F.ODBC.Connection!conx.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Variable.LoadUDTFromRecordset("conx","rst","uglobal.uITEMS",False,10000)
+F.ODBC.conx!rst.Close
+
+'Luke Perrine - Adding checks to see if the printed numbers range is greater than 50 just in case of errors.
+F.Intrinsic.Control.If(V.uGlobal.uITEMS.UBound,>=,50)
+
+	F.Intrinsic.String.Build("The program is trying to print {0} labels. Would you like to continue with printing?",V.uGlobal.uITEMS.UBound,V.Local.sMsg)
+	F.Intrinsic.UI.Msgbox(V.Local.sMsg,"Continue printing?",V.Enum.MsgBoxStyle!YesNo,V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Ambient.MsgBoxYes)
+		F.ODBC.Connection!conx.OpenCompanyConnection
+		
+		'6261 - Adding a switch to determine which elements on the label get printed.
+		F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uITEMS.UBound,0,-1)
+			F.Intrinsic.Control.If(V.uGlobal.uITEMS(V.Local.iFor)!PRODUCT_LINE.Trim,=,"E1","OR",V.uGlobal.uITEMS(V.Local.iFor)!PRODUCT_LINE.Trim,=,"M1")
+				F.Intrinsic.Control.If(V.uGlobal.uITEMS(V.Local.iFor)!XREF.Trim,<>,"")
+					V.uGlobal.uITEMS(V.Local.iFor)!TYPECHK.Set("0")
+				F.Intrinsic.Control.Else
+					V.uGlobal.uITEMS(V.Local.iFor)!TYPECHK.Set("1")
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				V.uGlobal.uITEMS(V.Local.iFor)!TYPECHK.Set("0")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iFor)
+		
+		'add the extra rows to the UDT for parts that have PACKINFO > 1
+		F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uITEMS.UBound,0,-1)
+			F.Intrinsic.Control.If(V.uGlobal.uITEMS(V.Local.iFor)!PACKINFO.Trim,=,"")
+				V.uGlobal.uITEMS(V.Local.iFor)!PACKINFO.Set("1 of 1")
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Control.CallSub(addlines,"Row",V.Local.iFor,"Elements",V.Local.sElementList)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iFor)
+		
+		'Luke Perrine - Commenting out old print code in order to build out the new dropdown print selection.
+'		F.Global.BI.PrintCodesoftLabelFromUDT(V.global.BIRunID,V.global.BILogID,"uGlobal.uITEMS",V.Local.sElementList,"",True)
+	
+		V.Global.sFinalElements.Set(V.Local.sElementList)
+		F.ODBC.Connection!conx.Close
+		gui.frmPrintSelect..Visible(True)
+	
+	F.Intrinsic.Control.Else
+		F.ODBC.Connection!conx.Close
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Else
+
+	'6261 - Adding a switch to determine which elements on the label get printed.
+	F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uITEMS.UBound,0,-1)
+		F.Intrinsic.Control.If(V.uGlobal.uITEMS(V.Local.iFor)!PRODUCT_LINE.Trim,=,"E1","OR",V.uGlobal.uITEMS(V.Local.iFor)!PRODUCT_LINE.Trim,=,"M1")
+			F.Intrinsic.Control.If(V.uGlobal.uITEMS(V.Local.iFor)!XREF.Trim,<>,"")
+				V.uGlobal.uITEMS(V.Local.iFor)!TYPECHK.Set("0")
+			F.Intrinsic.Control.Else
+				V.uGlobal.uITEMS(V.Local.iFor)!TYPECHK.Set("1")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			V.uGlobal.uITEMS(V.Local.iFor)!TYPECHK.Set("0")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iFor)
+	
+	'add the extra rows to the UDT for parts that have PACKINFO > 1
+	F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uITEMS.UBound,0,-1)
+		F.Intrinsic.Control.If(V.uGlobal.uITEMS(V.Local.iFor)!PACKINFO.Trim,=,"")
+			V.uGlobal.uITEMS(V.Local.iFor)!PACKINFO.Set("1 of 1")
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.CallSub(addlines,"Row",V.Local.iFor,"Elements",V.Local.sElementList)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iFor)
+	
+	'Luke Perrine - Commenting out old print code in order to build out the new dropdown print selection.
+'	F.Global.BI.PrintCodesoftLabelFromUDT(V.global.BIRunID,V.global.BILogID,"uGlobal.uITEMS",V.Local.sElementList,"",True)
+
+	V.Global.sFinalElements.Set(V.Local.sElementList)
+	F.ODBC.Connection!conx.Close
+	gui.frmPrintSelect..Visible(True)
+
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Label("cmdprint_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_BIN_MASTER_LABEL.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdprint_click.End
+
+Program.Sub.cmdcancel_click.Start
+F.Intrinsic.Control.End
+Program.Sub.cmdcancel_click.End
+
+Program.Sub.luloc_click.Start
+F.Intrinsic.Control.SetErrorHandler("luloc_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sDSN.Declare(String)
+
+'F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+F.ODBC.Connection!conx.OpenCompanyConnection
+
+F.Intrinsic.String.Split("Location*!*Description","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1300*!*2300","*!*",V.Local.iWidths)
+
+F.Intrinsic.UI.MiniBrowser("Select a Location",conx,"Select Location,Location_desc FROM V_LOCATIONS ORDER BY Location",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No Location was selected")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.Form1.txtLoc.Text(V.Local.sRet(0))
+	V.Global.sLoc.Set(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+F.ODBC.Connection!Conx.Close
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("luloc_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_PART_MSTR_LABEL.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.luloc_click.End
+
+Program.Sub.lustartpart_click.Start
+F.Intrinsic.Control.SetErrorHandler("lustartpart_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Declare(String)
+
+'select the starting PART
+V.Local.sSql.Set("select IM.PART, IM.LOCATION, IM.DESCRIPTION, I2.DESCRIPTION_2, I2.DESCRIPTION_3 ")
+F.Intrinsic.String.Concat(V.Local.sSql,"from INVENTORY_MSTR IM left join INVENTORY_MST2 I2 on IM.PART = I2.PART and IM.LOCATION = I2.LOCATION WHERE IM.LOCATION = '",V.global.sloc,"' ORDER BY IM.PART",V.Local.sSql)
+
+'F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+F.ODBC.Connection!conx.OpenCompanyConnection
+
+F.Intrinsic.String.Split("PART*!*LOCATION*!*DESCRIPTION*!*DESCRIPTION_2*!*DESCRIPTION_3","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1800*!*500*!*2200*!*2200*!*2200","*!*",V.Local.iWidths)
+F.Intrinsic.UI.Browser("Select Starting PART","conx",V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+F.ODBC.Connection!conx.Close
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No PART was selected")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.Form1.txtStartPart.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("lustartpart_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_PART_MSTR_LABEL.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.lustartpart_click.End
+
+Program.Sub.luendpart_click.Start
+F.Intrinsic.Control.SetErrorHandler("luendpart_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Declare(String)
+
+'select the starting PART
+V.Local.sSql.Set("select IM.PART, IM.LOCATION, IM.DESCRIPTION, I2.DESCRIPTION_2, I2.DESCRIPTION_3 ")
+F.Intrinsic.String.Concat(V.Local.sSql,"from INVENTORY_MSTR IM left join INVENTORY_MST2 I2 on IM.PART = I2.PART and IM.LOCATION = I2.LOCATION WHERE IM.LOCATION = '",V.global.sloc,"' ORDER BY IM.PART",V.Local.sSql)
+
+'F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+F.ODBC.Connection!conx.OpenCompanyConnection
+
+F.Intrinsic.String.Split("PART*!*LOCATION*!*DESCRIPTION*!*DESCRIPTION_2*!*DESCRIPTION_3","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1800*!*500*!*2200*!*2200*!*2200","*!*",V.Local.iWidths)
+F.Intrinsic.UI.Browser("Select Starting PART",conx,V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+F.ODBC.Connection!conx.Close
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No PART was selected")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.Form1.txtEndPart.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("luendpart_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_PART_MSTR_LABEL.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.luendpart_click.End
+
+Program.Sub.AddLines.Start
+F.Intrinsic.Control.SetErrorHandler("Addlines_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare
+
+V.Local.iCount.Declare
+V.Local.iFor.Declare
+V.Local.iTotal.Declare
+V.Local.sAppend.Declare
+V.Local.sPackInfo.Declare
+
+V.Local.iFor.Set(V.Args.Row)
+V.Local.sElementList.Set(V.Args.Elements)
+V.Local.iCount.Set(0)
+V.Local.iTotal.Set(V.uGlobal.uITEMS(V.Local.iFor)!PACKINFO)
+
+F.Intrinsic.Control.DoUntil(V.Local.iCount,=,V.Local.iTotal)
+	V.Local.iCount.Set(V.Local.iCount.++)
+	F.Intrinsic.Control.If(V.Local.iCount,=,1)
+		F.Intrinsic.String.Build("{0} OF {1}",V.Local.iCount,V.Local.iTotal,V.uGlobal.uITEMS(V.Local.iFor)!PACKINFO)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0} OF {1}",V.Local.iCount,V.Local.iTotal,V.Local.sPackInfo)
+		F.Intrinsic.String.Build("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}",V.Ambient.Tab,V.uGlobal.uITEMS(V.Local.iFor)!PART,V.uGlobal.uITEMS(V.Local.iFor)!LOCN,V.uGlobal.uITEMS(V.Local.iFor)!DESCR,V.uGlobal.uITEMS(V.Local.iFor)!DESC2,V.uGlobal.uITEMS(V.Local.iFor)!DESC3,V.Local.sPackInfo,V.Local.sAppend)
+		F.Intrinsic.Variable.LoadUDTFromString(V.uGlobal.uITEMS,V.Local.sElementList,V.Local.sAppend,V.Ambient.NewLine,V.Ambient.Tab,True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Loop
+
+F.Intrinsic.Control.Label("Addlines_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_PART_MSTR_LABEL.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.AddLines.End
+
+Program.Sub.txtStartPart_LostFocus.Start
+V.Local.sSQL.Declare
+V.Local.sRet.Declare
+
+F.Intrinsic.Control.If(v.Screen.Form1!txtStartPart.Text.Length,>,0)
+
+	'Validates part in txtStartPart field and makes sure it actually exists. 
+	F.Intrinsic.String.Build("SELECT DESCRIPTION FROM V_INVENTORY_MSTR WHERE PART = '{0}'",v.Screen.Form1!txtStartPart.Text.Trim,V.Local.sSQL)
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.ODBC.Connection!con.Close
+	
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+		F.Intrinsic.UI.Msgbox("The starting part number you entered does not exist. Please enter a part number that exists.","Incorrect Part Number")
+		gui.Form1.txtStartPart.Text("")
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.EndIf
+
+Program.Sub.txtStartPart_LostFocus.End
+
+Program.Sub.txtEndPart_LostFocus.Start
+V.Local.sSQL.Declare
+V.Local.sRet.Declare
+
+F.Intrinsic.Control.If(v.Screen.Form1!txtEndPart.Text.Length,>,0)
+
+	'Validates part in txtStartPart field and makes sure it actually exists. 
+	F.Intrinsic.String.Build("SELECT DESCRIPTION FROM V_INVENTORY_MSTR WHERE PART = '{0}'",v.Screen.Form1!txtEndPart.Text.Trim,V.Local.sSQL)
+	
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.ODBC.Connection!con.Close
+	
+	F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+		F.Intrinsic.UI.Msgbox("The ending part number you entered does not exist. Please enter a part number that exists.","Incorrect Part Number")
+		gui.Form1.txtEndPart.Text("")
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.EndIf
+
+Program.Sub.txtEndPart_LostFocus.End
+
+Program.Sub.frmPrintSelect_UnLoad.Start
+F.Intrinsic.Control.End
+Program.Sub.frmPrintSelect_UnLoad.End
+
+Program.Sub.cmdConfirm_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdprint_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sPrinter.Declare
+V.Local.lCopies.Declare
+V.Local.lCount.Declare
+
+'LJP - New subroutine for handling the printer selection. Stores the used printer for later to auto-fill upon load. 
+
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GCG_6261_PART_MSTR",6261,V.Caller.Terminal,False,V.Screen.frmPrintSelect!ddlPrinters.Value,False,0,0,V.Ambient.Now,V.Ambient.Now)
+
+F.Intrinsic.String.Split(V.Screen.frmPrintSelect!ddlPrinters.Value," - ",V.Local.sPrinter)
+
+V.Local.lCopies.Set(V.Screen.frmPrintSelect!txtCopies.Value)
+
+F.Intrinsic.Control.For(V.Local.lCount,1,V.Local.lCopies,1)
+	F.Global.BI.PrintCodesoftLabelFromUDT(V.global.BIRunID,V.global.BILogID,"uGlobal.uITEMS",V.Global.sFinalElements,V.Local.sPrinter(0),True)
+F.Intrinsic.Control.Next(V.Local.lCount)
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Label("cmdprint_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_BIN_MASTER_LABEL.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdConfirm_Click.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$lperrine$}$20221209105933430$}$2NUFt80QpM3hrjXY+iDnxks7M/ROcjnGWtx+efOAbQRH/Pj6nEWVr1ev5Ck6mAjtDnrdvgl00ygszbMvZUgAfg==
+Program.Sub.Comments.End
